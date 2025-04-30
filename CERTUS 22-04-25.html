@@ -126,7 +126,7 @@
               <div>
                 
                 <img class="clase_fixed  ; marca_agua"
-                style="border: 9px solid;color: deeppink;(253,55,29)" 
+                style="border: 9px solid;color: deeppink(253,55,29)" 
                 src="C:\Users\DOCENTE-NORTE\Documents\GitHub\JBRAVOS.github.io\imagenes\escudo7.jpg" alt="imagen no disponible"
                 
             width="300"  height="400">
@@ -138,7 +138,7 @@
               <div style="height: 1000px;">
                 
                 <img class="clase_stichy  ; "
-                style="border: 9px solid;color: deeppink;(253,55,29)" 
+                style="border: 9px solid;color: deeppink (253,55,29)" 
                 src="C:\Users\DOCENTE-NORTE\Documents\GitHub\JBRAVOS.github.io\imagenes\escudo6.webp" alt="imagen no disponible"
                 
             width="300"  height="400">
@@ -268,6 +268,68 @@
         <input type="checkbox" name="cursos" value="comunicacion"> <label for="comunicacion">Comunicacion</label>
         <input type="checkbox" name="cursos" value="ciencias"> <label for="ciencias">Ciencias</label>
     </p>
+
+    <section>
+      <h1 style="font-size:56px;">EJEMPLO DE MANIPULACION DEL DOM</h1>
+      <p id="ejmDOM1" style="font-size:25px;">Este es primer texto a aplicar DOM</p>
+    
+      <button onclick="FCambioColor()">CAMBIAR COLOR</button>
+    </section>
+    
+  <script>
+    let VarGlobal1 = "texto de variable global";
+
+function FCambioColor() {
+    let varTemporal = "texto temporal";
+    let vTexto1 = document.getElementById("ejmDOM1");
+
+    vTexto1.textContent = "Texto cambiado por funcion FCambioColor()";
+    vTexto1.style.color = "red";
+    vTexto1.style.backgroundColor = "green";
+
+    vTexto1.insertAdjacentHTML("beforeEnd", "<br>Este texto es adicional <br>");
+    vTexto1.insertAdjacentHTML("beforeEnd", VarGlobal1);
+    vTexto1.insertAdjacentHTML("afterend", "texto adicional <br><br>");
+
+    console.log("Texto por consola");
+}
+
+// Prueba fuera de la función
+let vTexto1 = "Texto fuera de funcion"; // vTexto1 no es la variable de la función
+console.log(vTexto1);
+//console.log(typeof varTemporal === "undefined" ? "varTemporal no está definido afuera de la función" : varTemporal);
+
+function FCambioClase1() {
+    let vTexto2 = document.getElementsByClassName("classDOM1");
+    vTexto2[1].innerHTML = "Elemento [1] del arreglo de clase classDOM1";
+    console.log("Tamaño del array=", vTexto2.length);
+    // se coloca el índice 1 por ser el 2do elemento de la clase classDOM1 de la pag web
+}
+
+function FCambioTag1() {
+    let vTexto3 = document.getElementsByTagName('h2');
+    vTexto3[6].innerHTML = "Elemento h2 cambiado por TagDOM1";
+    // se coloca el índice 6 por ser el 7mo elemento h2 de la pag web index.html
+}
+
+function FCambioClase1() {
+    let vTexto2 = document.getElementsByClassName("classDOM1");
+    vTexto2[1].innerHTML = "Elemento [1] del arreglo de clase classDOM1";
+    console.log("Tamaño del array=", vTexto2.length);
+    // se coloca el índice 1 por ser el 2do elemento de la clase classDOM1 de la pag web
+}
+
+function FCambioTag1() {
+    let vTexto3 = document.getElementsByTagName('h2');
+    vTexto3[6].innerHTML = "Elemento h2 cambiado por TagDOM1";
+    // se coloca el índice 6 por ser el 7mo elemento h2 de la pag web index.html
+}
+
+
+
+
+</script>
+
 
 </body>
 </html> 
