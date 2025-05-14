@@ -324,12 +324,160 @@ function FCambioTag1() {
     vTexto3[6].innerHTML = "Elemento h2 cambiado por TagDOM1";
     // se coloca el índice 6 por ser el 7mo elemento h2 de la pag web index.html
 }
-
-
-
-
 </script>
 
+<h2> FORMULARIO DE REGISTRO </h2>
 
+
+<form action="TODOSOBREMI.html"   method="post">
+
+<p> <label for="nombre"  > Nombre: <input type="text" name="nombre"  id="nombre" class="datosPersonales" required   > </label> </p>
+<p> <label for="apellido"> Apellido: <input type="text" name="apellido" id="apellido" class="datosPersonales"> </label> </p>
+<p> <label for="edad"> Edad: <input type="number" id="edad" name="edad"  class="datosPersonales" min="18" max="80"> </label> </p>
+
+<p> <label for="observacion"  style="font-size: 30px;"> Observacion: 
+        <textarea name="observacion" id="observacion" 
+          style="height:180px ;  width:300px ; font-size: 25px;">
+        </textarea>
+     </label> 
+</p>
+
+<p> 
+    <label for="estatura"> Estatura     
+        <select name="grupoestatura" id="estatura"    >
+          <option value="Seleccione"> Seleccione  </option>
+            <option value="menor de 1.50m"> menor de 1.50m  </option>
+            <option value="de 1.50m  a 1.59"> de 1.50m  a 1.59  </option>
+            <option value="de 1.60m  a 1.69"> de 1.60m  a 1.69  </option>
+            <option value="mayor o igual a 1.70m"> mayor o igual a 1.70m  </option>
+
+
+        </select>
+    </label>
+</p>
+
+
+<p style="font-size: 20px;"> <label for="numColegios"> Numero Colegios que estudió: <input type="number" id="numColegios" name="numColegios"  style="font-size: 20px;" min="1" max="12"> </label> </p>
+
+<div id="DetalleColegios"> DEtalle Estudios: </div>
+
+<br>
+<p> <label > Curso llevados  </label>
+  <br>
+    <input type="checkbox" name="cursos" value="matematica" id="matematica"  >
+      <label for="matematica"> Matematica </label> <br>
+    <input type="checkbox" name="cursos" value="LENGUAJE DSS" id="LDSS"  >
+      <label for="LDSS"> LENGUAJE DSS </label>    <br>
+    <input type="checkbox" name="cursos" value="Introduccion investigacion" id="INTRO_INV"  >
+      <label for="INTRO_INV"> Introduccion investigacion </label>    <br>
+    <input type="checkbox" name="cursos" value="NUEvas tendencias" id="Nuevas_Tendencias"  >
+      <label for="Nuevas_Tendencias"> NUEvas tendencias </label>  <br>
+
+
+</p>
+
+<p><label>Ciclo actual</label> <br>
+    <input style="scale:1.5 ;" id="Primero" type="radio" name="ciclo" value="Primero">
+    <label for="Primero">Primero</label><br>
+    <input style="scale:1.5 ;" id="Segundo" type="radio" name="ciclo" value="Segundo">
+    <label for="Segundo">Segundo</label><br>
+    <input style="scale:1.5 ;" id="Tercero" type="radio" name="ciclo" value="Tercero">
+    <label for="Tercero">Tercero</label><br>
+    <input style="scale:1.5 ;" id="Cuarto"  type="radio" name="ciclo" value="Cuarto">
+    <label for="Cuarto">Cuarto</label><br>
+    <input style="scale:1.5 ;" id="Quinto" type="radio" name="ciclo" value="Quinto">
+    <label for="Quinto">Quinto</label><br>
+    <input style="scale:1.5 ;" id="Sexto" type="radio" name="ciclo" value="Sexto" >
+    <label for="Sexto">Sexto</label>
+</p>
+
+
+<label for="fecha"> SELECCIONE FECHA: 
+  <input style="font-size:25px" type="date" name="fecha" id="fecha"    >
+</label>
+
+
+
+
+<br><br>
+
+
+<label for="clave"> SELECCIONE CLAVE: 
+  <input  style="font-size:15px" type="password"    name="clave"  id="clave"  autofocus  
+    minlength="5" maxlength="10"           >
+</label>
+
+<br><br>
+
+<label for="resetear"> RESETEAR: 
+  <input style="font-size:15px" type="reset" name="resetear" id="resetear"  >
+</label>
+
+<br><br>
+<label for="email"> Ingrese Email: 
+  <input style="font-size:20px" type="email" name="correo" id="email" placeholder="@certus.edu.pe">
+</label>
+
+
+
+<br>
+
+<button style="font-size:30px ;" type="button" 
+onclick="FCapturarNombre()">       Copiar Nombre a observaciones  </button>
+<br> <br><br>
+
+
+<button style="font-size:30px ;" type="button" 
+onclick="FValidarCiclo()">Enviar ciclo a observacion</button>
+<br> <br><br>
+
+
+<button style="font-size:30px ;" type="button" 
+onclick="FCrearDatosCiclo() ">Enviar ciclo a observacion automatico</button>
+<br> <br><br>
+
+
+
+<button type="submit" style="font-size:30px ;" > enviar </button>
+</form>
+
+<section>
+  <button onclick="Fverificacion()"> Verificar Nombres </button>
+</section>
+
+<script>
+  function Fverificacion() {
+    let nombre1 = prompt("Ingresa tu primer nombre:");
+    let nombre2 = prompt("Ingresa tu segundo nombre:");
+
+    let longitud1 = nombre1.length;
+    let longitud2 = nombre2.length;
+
+if (longitud1 < longitud2) {
+    alert("El primer nombre: " + nombre1 + " es menor al segundo nombre: " + nombre2);
+
+  textoconcat= longitud1 + longitud2;
+
+} else {
+    if (longitud1 > longitud2)
+    {
+        alert("El primer nombre: " + nombre1 + " es mayor al segundo nombre: " + nombre2)
+        textoconcat= longitud1 + longitud2;
+    
+      } 
+      else 
+      {
+        // Caso por defecto: son iguales en longitud
+        alert("El primer nombre: " + nombre1 + " es igual en longitud al segundo nombre: " + nombre2);
+        textoconcat= nombre1 + nombre2;
+
+    }
+}
+    alert("Apellidos concatenados:" +textoconcat);
+
+
+
+  }
+</script>
 </body>
 </html> 
